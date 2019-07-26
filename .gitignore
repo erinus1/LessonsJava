@@ -1,0 +1,10 @@
+.idea/
+.idea\*.xml
+.settings/
+.svn/
+/target/
+/bin/
+.classpath
+.project
+.scannerwork/
+out/
