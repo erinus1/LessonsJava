@@ -10,7 +10,7 @@ public class Employee {
     int id;
     String info;
 
-    String setInfo(String name, String surname, String status){ //method info
+    String setInfo(String name, String surname, String status){   // method info
 
         info = name + " " + surname + " - " + status;
 
