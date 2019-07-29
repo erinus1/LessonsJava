@@ -1,5 +1,5 @@
 package Modul3_3;
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class ListEmployee {
@@ -21,6 +21,5 @@ public class ListEmployee {
 
         System.out.println("There is an employee: " + person1.setInfo(name, surname, status) + ", id is " + person1.getId());
         System.out.println("Next id is " + person1.getId());
-
     }
 }

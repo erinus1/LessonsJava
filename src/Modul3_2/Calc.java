@@ -1,4 +1,4 @@
-package Modul3_2;//module 2 task 2
+package src.Modul3_2;//module 2 task 2
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

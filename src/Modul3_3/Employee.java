@@ -1,7 +1,6 @@
 package Modul3_3;
 import java.util.Random;
 
-
 public class Employee {
 
     String in;
@@ -19,7 +18,6 @@ public class Employee {
 
     String getInfo(){
         return info;
-
     }
 
     Employee(){ //constructor
@@ -34,10 +32,4 @@ public class Employee {
         id +=1;
         return id;
     }
-
-    }
-
-
-
-
-
+}
