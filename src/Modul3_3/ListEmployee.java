@@ -1,5 +1,5 @@
 package Modul3_3;
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class ListEmployee {
@@ -17,12 +17,14 @@ public class ListEmployee {
         System.out.println("Enter your status:  ");
         String status = in.nextLine();
 
-        Employee person1 = new Employee();
+        Employee person1 = new Information();
+        Employee person2 = new Employee("Ivan", "Ivanov", "single");
 
-        System.out.println("There is an employee: " + person1.setInfo(name, surname, status) + ", id is " + person1.getId());
-        System.out.println("Next id is " + person1.getId());
+        System.out.println("Name is ");
+        System.out.println("Surname is ");
+        System.out.println("Status is ");
+        System.out.println("ID is ");
+
 
     }
 }
-
-//test
