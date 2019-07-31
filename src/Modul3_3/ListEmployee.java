@@ -20,6 +20,7 @@ public class ListEmployee {
         Employee person1 = new Information();
         Employee person2 = new Employee("Ivan", "Ivanov", "single");
 
+        System.out.println(((Information) person1).getName());
         System.out.println("Name is ");
         System.out.println("Surname is ");
         System.out.println("Status is ");
