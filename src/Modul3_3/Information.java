@@ -6,13 +6,14 @@ public class Information extends Employee {
 
 
     Information() {
-        id = random.nextInt(100);
+        setIDRandom();
     }
 
     Information(String n, String s, String st) {
         this.name = n;
         this.surname = s;
         this.status = st;
+        setIDRandom();
 
     }
 }

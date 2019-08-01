@@ -2,16 +2,13 @@ package src.Modul3_3;
 import java.util.Random;
 
 public class Employee {
-
     String name;
     String surname;
     String status;
     int id;
 
-    Random random = new Random();
-
-    public void setID(){
-        id = 1;
+    public void setID(int id){
+        this.id = id;
     }
 
     int getID(){
@@ -19,17 +16,14 @@ public class Employee {
     }
 
     public void setIDRandom(){
-        id = random.nextInt(1);
+        Random random = new Random();
+        setID(random.nextInt(100));
     }
 
     int getIDRandom() {
-        id +=1;
         return id;
     }
 
-    public void setName(String name){
-        this.name = name;
-    }
     String getName(){
         return this.name;
     }
@@ -37,7 +31,6 @@ public class Employee {
     String getSurname(){
         return surname;
     }
-
     String getStatus(){
         return status;
     }
