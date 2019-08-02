@@ -7,12 +7,12 @@ public class Employee {
     String status;
     int id;
 
-    int getID(){
-        return id;
+    public void setID(int id){
+        this.id = id;
     }
 
-    void setID(int id) {
-        this.id = id;
+    int getID(){
+        return id;
     }
 
     public void setIDRandom(){
@@ -27,11 +27,9 @@ public class Employee {
     String getName(){
         return name;
     }
-
     String getSurname(){
         return surname;
     }
-
     String getStatus(){
         return status;
     }
