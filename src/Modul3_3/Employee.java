@@ -24,12 +24,14 @@ public class Employee {
         return id;
     }
 
-    String getName(){
+  String getName(){
         return name;
     }
+  
     String getSurname(){
         return surname;
     }
+  
     String getStatus(){
         return status;
     }

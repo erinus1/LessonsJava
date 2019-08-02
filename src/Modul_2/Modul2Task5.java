@@ -20,11 +20,5 @@ public class Modul2Task5 {
         } else {
             System.out.println(keyPositionInArray);
         }
-
-
-
-
-
-
     }
 }

@@ -20,11 +20,5 @@ public class Calc {
         } catch (InputMismatchException a){
             System.out.println("Error. Enter number");
         }
-
-
-
-
-
-
     }
 }

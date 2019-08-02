@@ -41,11 +41,5 @@ public class Modul2Task3 {
         }
 
         System.out.println("Your zodiac is: "  + color + " " + zodiac);
-
     }
-
 }
-
-
-
-

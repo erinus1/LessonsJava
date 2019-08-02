@@ -29,7 +29,3 @@ public class Modul2Task4 {
             }
         }
     }
-
-
-
-

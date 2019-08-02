@@ -1,4 +1,5 @@
 package Modul_3_1;//package Modul_3;
+
 //task 1
 
 public class Main {
@@ -19,12 +20,9 @@ public class Main {
                 PlayingCard pc = new PlayingCard(rank, suit);
 
                 deck.addPlayingCard(pc);
-
             }
         }
 
         deck.showAll();
     }
-
-
 }

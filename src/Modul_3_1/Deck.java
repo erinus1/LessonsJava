@@ -1,4 +1,5 @@
 package Modul_3_1;//package Modul_3;
+
 //task 1
 
 import java.util.ArrayList;
@@ -27,5 +28,4 @@ public class Deck {
             System.out.println("Suit is: " + pc.suit + "; Rank is: " + pc.rank);
         }
     }
-
 }

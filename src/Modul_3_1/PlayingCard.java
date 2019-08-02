@@ -1,4 +1,5 @@
 package Modul_3_1;//package Modul_3;
+
 //task 1
 
 public class PlayingCard {
@@ -11,4 +12,3 @@ public class PlayingCard {
         this.suit = suit;
     }
 }
-

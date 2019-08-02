@@ -24,6 +24,7 @@ public class Modul2Task7 {
                 }
             }
         }
+      
         System.out.println(Arrays.toString(numbers));
 
 
@@ -41,10 +42,7 @@ public class Modul2Task7 {
                 }
             }
         }
+      
         System.out.println(Arrays.toString(numbers));
-
     }
 }
-
-
-
