@@ -26,6 +26,7 @@ public class ListEmployee {
         System.out.println("Surname is " + person1.getSurname());
         System.out.println("Status is " + person1.getStatus());
         System.out.println("ID is " + person1.getID() + " Next ID is " + person1.getIDRandom() );
+        System.out.println(employeeID.getIDRandom());
 
 
     }

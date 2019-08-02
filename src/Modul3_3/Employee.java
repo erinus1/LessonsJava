@@ -27,7 +27,6 @@ public class Employee {
     String getName(){
         return this.name;
     }
-
     String getSurname(){
         return surname;
     }
