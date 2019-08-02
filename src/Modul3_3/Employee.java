@@ -1,37 +1,31 @@
-package src.Modul3_3;
+package Modul3_3;
 import java.util.Random;
 
 public class Employee {
-
     String name;
     String surname;
     String status;
     int id;
 
-    Random random = new Random();
-
-    public void setID(){
-        id = 1;
-    }
-
     int getID(){
         return id;
     }
 
+    void setID(int id) {
+        this.id = id;
+    }
+
     public void setIDRandom(){
-        id = random.nextInt(1);
+        Random random = new Random();
+        setID(random.nextInt(100));
     }
 
     int getIDRandom() {
-        id +=1;
         return id;
     }
 
-    public void setName(String name){
-        this.name = name;
-    }
     String getName(){
-        return this.name;
+        return name;
     }
 
     String getSurname(){
@@ -41,7 +35,4 @@ public class Employee {
     String getStatus(){
         return status;
     }
-
 }
-
-
