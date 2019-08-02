@@ -1,4 +1,4 @@
-package src.Modul_2;
+package Modul_2;
 
 public class Modul2Task3 {
 
@@ -41,11 +41,5 @@ public class Modul2Task3 {
         }
 
         System.out.println("Your zodiac is: "  + color + " " + zodiac);
-
     }
-
 }
-
-
-
-

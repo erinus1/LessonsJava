@@ -2,34 +2,37 @@ package Modul3_3;
 import java.util.Random;
 
 public class Employee {
-
-    String in;
-
-    Random random = new Random();
+    String name;
+    String surname;
+    String status;
     int id;
-    String info;
 
-    String setInfo(String name, String surname, String status){ //method info
-
-        info = name + " " + surname + " - " + status;
-
-        return info;
+    public void setID(int id){
+        this.id = id;
     }
 
-    String getInfo(){
-        return info;
-    }
-
-    Employee(){ //constructor
-        id = random.nextInt(100);
-    }
-    int setId(){
-        id = id;
+    int getID(){
         return id;
     }
 
-    int getId() {
-        id +=1;
+    public void setIDRandom(){
+        Random random = new Random();
+        setID(random.nextInt(100));
+    }
+
+    int getIDRandom() {
         return id;
+    }
+
+  String getName(){
+        return name;
+    }
+  
+    String getSurname(){
+        return surname;
+    }
+  
+    String getStatus(){
+        return status;
     }
 }

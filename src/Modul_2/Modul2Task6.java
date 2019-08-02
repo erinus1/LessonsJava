@@ -1,4 +1,4 @@
-package src.Modul_2;
+package Modul_2;
 
 import java.util.Arrays;
 
@@ -21,6 +21,7 @@ public class Modul2Task6 {
                 }
             }
         }
+      
         System.out.println(Arrays.toString(data));
 
         int a = data.length % 2;
@@ -60,13 +61,7 @@ public class Modul2Task6 {
                     }
                 }
             }
+      
         System.out.println("Moda is " + modaIs);
         }
-
     }
-
-
-
-
-
-

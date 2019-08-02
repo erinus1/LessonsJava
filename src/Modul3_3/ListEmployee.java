@@ -17,9 +17,12 @@ public class ListEmployee {
         System.out.println("Enter your status:  ");
         String status = in.nextLine();
 
-        Employee person1 = new Employee();
+        Information person1 = new Information(name , surname, status);
+        Information employeeID = new Information();
 
-        System.out.println("There is an employee: " + person1.setInfo(name, surname, status) + ", id is " + person1.getId());
-        System.out.println("Next id is " + person1.getId());
+        System.out.println("Name is " + person1.getName());
+        System.out.println("Surname is " + person1.getSurname());
+        System.out.println("Status is " + person1.getStatus());
+        System.out.println("ID is " + person1.getID() + " Next ID is " + employeeID.getIDRandom());
     }
 }
