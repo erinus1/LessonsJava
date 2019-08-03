@@ -9,9 +9,6 @@ public class Deck {
 
     private ArrayList<PlayingCard> collection = new ArrayList<>();
 
-//    String draw(){
-
-//    }
 
     void addPlayingCard(PlayingCard pc){
 
