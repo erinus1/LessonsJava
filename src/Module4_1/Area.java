@@ -10,15 +10,16 @@ package Module4_1;
 
 
         @Override
-        public double squeareArea(double side) {
+        public double squareArea(double side) {
 
-            return (side * 4);
+            return Math.pow(side, 2);
         }
 
         @Override
         public double circleArea(double radius) {
 
-            double area = radius * radius * Math.PI;
+            double area = Math.pow(radius, 2) * Math.PI;
+
             return area;
         }
     }

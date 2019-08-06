@@ -32,7 +32,7 @@ public class Main {
             double side = in.nextDouble();
 
 
-            System.out.println("Squeare is " + area.squeareArea(side));
+            System.out.println("Squeare is " + area.squareArea(side));
 
 
             System.out.println("Enter circle's radius: ");
