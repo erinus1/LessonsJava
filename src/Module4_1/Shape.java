@@ -5,13 +5,9 @@ public abstract class Shape {
 
     public abstract double rectangleArea(double length, double breadth);
 
-    public abstract double squeareArea(double side);
+    public abstract double squareArea(double side);
 
     public abstract double circleArea(double radius);
-
-
-
-
 }
 
 
