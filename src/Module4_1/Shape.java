@@ -1,14 +1,13 @@
 package Module4_1;
 
+
 public abstract class Shape {
 
-    public abstract void rectangleArea();
+    public abstract double rectangleArea(double length, double breadth);
 
-    public abstract void squeareArea();
+    public abstract double squareArea(double side);
 
-    public abstract void circleArea();
-
-
-
-
+    public abstract double circleArea(double radius);
 }
+
+
