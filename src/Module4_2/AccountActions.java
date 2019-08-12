@@ -2,7 +2,7 @@ package Module4_2;
 
 abstract class AccountActions {
 
-    public float currentAmount = 0;
+    public float currentAmount;
     public float newAmount;
     public float fee;
     public float balance;

@@ -17,14 +17,24 @@ public class CreditAcc extends AccountActions{
 
     @Override
     public float withDraw(float newAmount) {
-        currentAmount -= (newAmount + calculateFee(1, newAmount));
-        return newAmount;
+            currentAmount -= (newAmount + calculateFee(1, newAmount));
+            System.out.println("Fee is 1%");
+            return newAmount;
+
+//        } else if (newAmount <= 0) {
+//            currentAmount -= (newAmount + calculateFee(5, newAmount));
+//            System.out.println("Fee is 5% , your balance is negative");
+//        }
+//        return newAmount;
+
+
     }
 
     @Override
     public float calculateFee(float fee, float amount) {
         return fee * amount / 100;
+
+        }
+
     }
 
-    
-}

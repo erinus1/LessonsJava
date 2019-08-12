@@ -8,7 +8,7 @@ public class Main {
 
         CreditAcc credit = new CreditAcc();
 
-
+        credit.printBalance();
         System.out.println("Please enter your amount : ");
 
         int newAmount = sca.nextInt();
@@ -22,6 +22,7 @@ public class Main {
 
         credit.withDraw(toWithdraw);
         credit.printBalance();
+        credit.calculateFee(5, 10);
 
 
 

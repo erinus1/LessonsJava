@@ -14,7 +14,7 @@ public class DebetAcc extends AccountActions{
     }
 
     @Override
-    public float calculateFee(int fee, int amount) {
+    public float calculateFee(float fee, float amount) {
         return 0;
     }
 }
