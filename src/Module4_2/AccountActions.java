@@ -2,14 +2,14 @@ package Module4_2;
 
 abstract class AccountActions {
 
-    private int currentAmount;
-    private int newAmount;
-    private int fee;
-    private int balance;
+    public float currentAmount;
+    public float newAmount;
+    public float fee;
+    public float balance;
 
-    public abstract int addMoney(int currentSumm, int newAmount);
+    public abstract float addMoney(float currentAmount);
 
-    public abstract int withDraw(int newSumm);
+    public abstract float withDraw(float newAmount);
 
-    public abstract int calculateFee(int fee);
+    public abstract float calculateFee(float fee, float amount);
 }
