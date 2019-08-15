@@ -1,6 +1,7 @@
 package Module4_2;
 
 public class CreditAcc extends AccountActions {
+
     public CreditAcc() {
         currentAmount = 0;
     }
@@ -17,6 +18,7 @@ public class CreditAcc extends AccountActions {
 
     @Override
     public float withDraw(float newAmount) {
+
         currentAmount = currentAmount - newAmount;
 
         if (currentAmount >= 1) {
@@ -30,16 +32,10 @@ public class CreditAcc extends AccountActions {
 
             return newAmount;
         }
-
+        
     @Override
     public float calculateFee(float fee, float amount) {
         return fee * amount / 100;
 
     }
 }
-
-
-
-
-
-

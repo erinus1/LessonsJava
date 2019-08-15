@@ -26,15 +26,5 @@ public class Main {
         credit.withDraw(toWithdraw);
         credit.printBalance();
 
-
-
-
-
-
-
-
-
-
-
     }
 }
