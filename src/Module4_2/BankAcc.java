@@ -1,6 +1,6 @@
 package Module4_2;
 
-abstract class AccountActions {
+abstract class BankAcc {
 
     public float currentAmount;
     public float newAmount;
@@ -10,6 +10,10 @@ abstract class AccountActions {
     public abstract float addMoney(float currentAmount);
 
     public abstract float withDraw(float newAmount);
+
+    public abstract float getBalance(float currentAmount);
+
+    public abstract float setBalance (float currentAmount);
 
     public abstract float calculateFee(float fee, float amount);
 }

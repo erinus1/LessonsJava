@@ -1,6 +1,6 @@
 package Module4_2;
 
-public class DebetAcc extends AccountActions{
+public class DebetAcc extends BankAcc {
 
 
     @Override
@@ -10,6 +10,16 @@ public class DebetAcc extends AccountActions{
 
     @Override
     public float withDraw(float newSumm) {
+        return 0;
+    }
+
+    @Override
+    public float getBalance(float currentAmount) {
+        return 0;
+    }
+
+    @Override
+    public float setBalance(float currentAmount) {
         return 0;
     }
 

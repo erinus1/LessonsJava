@@ -1,6 +1,6 @@
 package Module4_2;
 
-public class CreditAcc extends AccountActions {
+public class CreditAcc extends BankAcc {
 
     public CreditAcc() {
         currentAmount = 0;
@@ -32,7 +32,17 @@ public class CreditAcc extends AccountActions {
 
             return newAmount;
         }
-        
+
+    @Override
+    public float getBalance(float currentAmount) {
+        return 0;
+    }
+
+    @Override
+    public float setBalance(float currentAmount) {
+        return 0;
+    }
+
     @Override
     public float calculateFee(float fee, float amount) {
         return fee * amount / 100;
