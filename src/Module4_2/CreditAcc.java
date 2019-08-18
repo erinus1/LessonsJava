@@ -2,50 +2,43 @@ package Module4_2;
 
 public class CreditAcc extends BankAcc {
 
-    public CreditAcc() {
-        currentAmount = 0;
-    }
-
-    public void printBalance() {
-        System.out.println("Your balance is " + currentAmount);
-    }
-
     @Override
-    public float addMoney(float newAmount) {
-        currentAmount += newAmount;
+    public void setBalance(float currentAmount) {
+        this.currentAmount = currentAmount;
+    }
+    @Override
+    public float getBalance() {
         return currentAmount;
     }
 
+    public void printBalance() {
+        System.out.println("Credit account. Your balance is " + getBalance());
+    }
+    @Override
+    public float addMoney(float amount) {
+        System.out.println("Please enter your amount for adding to credit account : ");
+        currentAmount += amount;
+        return currentAmount;
+    }
     @Override
     public float withDraw(float newAmount) {
+        System.out.println("Enter your amount for withdraw: ");
+        float fee;
+        String msg;
 
-        currentAmount = currentAmount - newAmount;
-
-        if (currentAmount >= 1) {
-            newAmount = newAmount + calculateFee(1, newAmount);
-            currentAmount = newAmount;
-            System.out.println("Fee is 1%");}
-
-        else if (currentAmount == 0){
-            currentAmount -= calculateFee(5, newAmount);
-            System.out.println("Negative balance. Fee is 5%");}
-
-            return newAmount;
+        if ((currentAmount - newAmount) >= 0) {
+            fee = 1;
+            msg = "Fee is 1%";
+        } else {
+            fee = 5;
+            msg = "Negative balance. Fee is 5%";
         }
-
-    @Override
-    public float getBalance(float currentAmount) {
-        return 0;
+        currentAmount -= (newAmount + calculateFee(fee, newAmount));
+        System.out.println(msg);
+        return newAmount;
     }
-
-    @Override
-    public float setBalance(float currentAmount) {
-        return 0;
-    }
-
     @Override
     public float calculateFee(float fee, float amount) {
         return fee * amount / 100;
-
     }
 }
