@@ -4,6 +4,7 @@ public interface Observer { //Listener
 
     public void update();
 
+
 }
 
 
