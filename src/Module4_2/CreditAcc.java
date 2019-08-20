@@ -1,6 +1,8 @@
 package Module4_2;
 
-public class CreditAcc extends BankAcc {
+import java.util.Observer;
+
+public class CreditAcc extends BankAcc implements Notifier {
 
     @Override
     public void setBalance(float currentAmount) {
@@ -10,7 +12,6 @@ public class CreditAcc extends BankAcc {
     public float getBalance() {
         return currentAmount;
     }
-
     public void printBalance() {
         System.out.println("Credit account. Your balance is " + getBalance());
     }
@@ -40,5 +41,20 @@ public class CreditAcc extends BankAcc {
     @Override
     public float calculateFee(float fee, float amount) {
         return fee * amount / 100;
+    }
+
+    @Override
+    public void addObserver(Observer obs) {
+
+    }
+
+    @Override
+    public void removeObserver(Observer obs) {
+
+    }
+
+    @Override
+    public void notifyObserver() {
+
     }
 }
