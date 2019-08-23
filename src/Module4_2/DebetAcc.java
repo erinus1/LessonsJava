@@ -1,9 +1,6 @@
 package Module4_2;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 
 public class DebetAcc extends BankAcc implements Publisher {
     float fee = 1;
@@ -12,13 +9,6 @@ public class DebetAcc extends BankAcc implements Publisher {
     public DebetAcc() {
         subscribers = new HashMap();
     }
-
-    Observer obs = new Observer() {
-        @Override
-        public void update() {
-        }
-    };
-
     @Override
     public void setBalance(float currentAmount) {
         this.currentAmount = currentAmount;
@@ -34,7 +24,7 @@ public class DebetAcc extends BankAcc implements Publisher {
     public float addMoney(float amount) {
         System.out.println("Please enter your amount for adding to debet account: ");
         currentAmount += amount;
-        notify("Add money", amount);
+        notify("Add money", currentAmount);
         return currentAmount;
     }
 
@@ -42,7 +32,7 @@ public class DebetAcc extends BankAcc implements Publisher {
     public float withDraw(float newAmount) {
         currentAmount -= (newAmount + calculateFee(fee, newAmount));
         System.out.println("Enter your amount for withdraw. Fee will be 1% ");
-        notify("Withdraw", newAmount);
+        notify("Withdraw", currentAmount);
         return newAmount;
     }
 
@@ -73,14 +63,12 @@ public class DebetAcc extends BankAcc implements Publisher {
         // 2 - взять всех подписчеков по имени ивента из хэш-мапа
         // 3 - пройтись по каждому из подписчиков и вызвать метод "update"
 
-        if(subscribers.containsKey(eventName)){
-            for (int i = 0; i < subscribers.size(); i++){
-                obs.update();
-
+        if (subscribers.containsKey(eventName)) {
+            ArrayList<Subscriber> allSubs = subscribers.get(eventName);
+            for (int i = 0; i < allSubs.size(); i++) {
+                Subscriber subs = allSubs.get(i);
+                subs.update(data);
             }
-        }
-
-
         }
     }
 }

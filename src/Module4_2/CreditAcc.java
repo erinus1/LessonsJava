@@ -2,7 +2,7 @@ package Module4_2;
 
 import java.util.Observer;
 
-public class CreditAcc extends BankAcc implements Notifier {
+public class CreditAcc extends BankAcc implements Publisher {
 
     @Override
     public void setBalance(float currentAmount) {
@@ -44,17 +44,12 @@ public class CreditAcc extends BankAcc implements Notifier {
     }
 
     @Override
-    public void addObserver(Observer obs) {
+    public void subscribe(Subscriber subscriber, String eventName) {
 
     }
 
     @Override
-    public void removeObserver(Observer obs) {
-
-    }
-
-    @Override
-    public void notifyObserver() {
+    public void notify(String eventName, Object data) {
 
     }
 }

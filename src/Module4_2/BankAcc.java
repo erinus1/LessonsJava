@@ -5,7 +5,6 @@ import java.util.List;
 abstract class BankAcc {
 
     public float currentAmount;
-    public List observers;
 
     public abstract float addMoney(float currentAmount);
     public abstract float withDraw(float newAmount);
