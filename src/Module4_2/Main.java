@@ -5,8 +5,8 @@ public class Main {
 
         CreditAcc credit = new CreditAcc();
         DebetAcc debet = new DebetAcc();
-
         Human human1 = new Human();
+        
         debet.subscribe(human1, "New event");
         debet.notify("Set balance", "New balance");
 
