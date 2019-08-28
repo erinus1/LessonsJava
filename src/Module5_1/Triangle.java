@@ -1,16 +1,16 @@
 package Module5_1;
 
-public class Triangle {
-//        double side = 10;
-//        double hight = 4;
-
+public class Triangle{
     double area;
 
-    boolean res;
+    public double calculate(double a, double b, double c) {
+        double halfArea = (a + b + c) / 2;
+        double geron = halfArea * ((halfArea - a) + (halfArea - b) + (halfArea - c));
+        return area = Math.sqrt(geron);
+    }
+    }
 
-        public double calculate(double side, double hight){
-            area = (side * hight) / 2;
-            return area;
-        }
-            }
-   
+
+
+
+
