@@ -1,16 +1,20 @@
 package Module5_1;
 
-public class Triangle{
+public class Triangle {
     double area;
 
-    public double calculate(double a, double b, double c) {
-        double halfArea = (a + b + c) / 2;
-        double geron = halfArea * ((halfArea - a) + (halfArea - b) + (halfArea - c));
-        return area = Math.sqrt(geron);
+    Point a;
+    Point b;
+    Point c;
+
+    public Triangle(Point a, Point b, Point c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
+
+    public double calculateArea() {
+        area = Math.abs((a.x-c.x)*(b.y-c.y)-(b.x-c.x)*(a.y-c.y)) / 2;
+        return area;
     }
-
-
-
-
-
+}
