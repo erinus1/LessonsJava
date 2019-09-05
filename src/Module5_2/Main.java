@@ -6,16 +6,19 @@ public class Main {
         CreditAcc credit = new CreditAcc();
         DebetAcc debet = new DebetAcc();
         Human human1 = new Human();
+        RunTimeEx ex = new RunTimeEx();
 
         debet.subscribe(human1, "Withdraw");
         credit.subscribe(human1, "Add money");
 
-        credit.setBalance(0);
-        credit.addMoney(200);
-        credit.withDraw(400);
+        ex.replenish(-10);
 
-        debet.setBalance(20);
-        debet.addMoney(30);
-        debet.withDraw(10);
+        credit.setBalance(10);
+        credit.addMoney(9);
+        credit.withDraw(2);
+
+        debet.setBalance(320);
+        debet.addMoney(40);
+        debet.withDraw(20);
     }
 }
