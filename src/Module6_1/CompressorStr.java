@@ -1,30 +1,25 @@
 package Module6_1;
 
 public class CompressorStr {
+    StringBuilder stringBuilder = new StringBuilder();
+    String[] numb = {"0", "2", "1", "3", "4", "5", "6", "7", "8", "9"};
+    //char searchChar = '/';
 
-    public String compress(String toArray) {
+    public String compress(String string) {
 
-        StringBuilder stringBuilder = new StringBuilder();
-        int[] numb = {0, 2, 1, 3, 4, 5, 6, 7, 8, 9};
-        //boolean isNumbers = false;
-
-        for(int i = 0; i < toArray.length(); i++) {
+        for (int i = 0; i < string.length(); i++) {
             int count = 1;
-            while (i < (toArray.length() - 1) && toArray.charAt(i) == toArray.charAt(i +1)){
+            while (i < (string.length() - 1) && string.charAt(i) == string.charAt(i + 1)) {
                 count++;
                 i++;
             }
-            for(int b = 0; b < numb.length; b++)
-                //while (toArray.length() == numb.length)
-            if(numb[b] == numb.length){
-                stringBuilder.append("/");
-            }
-
-            stringBuilder.append(count);
-            stringBuilder.append(toArray.charAt(i));
+            stringBuilder = stringBuilder.append(count).append(string.charAt(i));
         }
+        stringBuilder.
         return stringBuilder.toString();
     }
-
-
 }
+
+
+
+

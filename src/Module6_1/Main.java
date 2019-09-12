@@ -8,11 +8,9 @@ public class Main {
         CompressorStr str = new CompressorStr();
 
         System.out.println("Enter your string: ");
-        String resultSt = sc.nextLine();
-        char[]toArray = resultSt.toCharArray(); //convert to array
-        System.out.println(toArray);
-        //System.out.println("Compressed to " + str.compress(toArray);
-
+        //String resultSt = sc.nextLine();
+        //System.out.println("Compressed to " + str.compress(resultSt));
+        System.out.println("Compressed to " + str.compress("AAAAaaaBBBBBB2")); //1A3a2B \2
     }
   }
 
