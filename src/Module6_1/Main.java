@@ -10,7 +10,7 @@ public class Main {
         System.out.println("Enter your string: ");
         //String resultSt = sc.nextLine();
         //System.out.println("Compressed to " + str.compress(resultSt));
-        System.out.println("Compressed to " + str.compress("AAAAaaaBBBBBB2")); //1A3a2B \2
+        System.out.println("Compressed to " + str.compress("AaaaBB2")); //1A3a2B\2
     }
   }
 
