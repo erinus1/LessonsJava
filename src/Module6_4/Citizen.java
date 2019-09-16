@@ -1,16 +1,15 @@
 package Module6_4;
-import java.util.HashMap;
 
 public class Citizen {
-    HashMap<String, String> person = new HashMap<String, String>();
+    String firstName;
+    String lastName;
 
-    public void setPerson(HashMap<String, String> person) {
-        person.put("Petr","Petrov");
-        person.put("Ivan","Ivanov");
-        person.put("Lesya","Kotova");
-        person.put("Olga","Frolova");
+    public Citizen (String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-    public HashMap<String, String> getPerson() {
-        return person;
+
+    public String sayYourName() {
+        return firstName + " " + lastName;
     }
 }
