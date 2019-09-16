@@ -7,10 +7,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         CompressorStr str = new CompressorStr();
 
-        System.out.println("Enter your string: ");
+        System.out.println("Input: ");
         //String resultSt = sc.nextLine();
         //System.out.println("Compressed to " + str.compress(resultSt));
-        System.out.println("Compressed to " + str.compress("AaaaBB2")); //1A3a2B\2
+        System.out.println("Compressed to " + str.compress("ABf/45/")); //1A3a2B\2
     }
   }
 
