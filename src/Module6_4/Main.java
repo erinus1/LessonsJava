@@ -1,27 +1,31 @@
 package Module6_4;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        DataBase dataBase = new DataBase();
+        DataBase database = new DataBase();
+        Scanner sc = new Scanner(System.in);
 
         Passport passport = new Passport("EH", 0567);
         Citizen citizen = new Citizen("Petr","Petrov");
 
-        dataBase.add(passport, citizen);
+        Passport passport1 = new Passport("EH", 8567);
+        Citizen citizen1 = new Citizen("Ivan","Petrov");
 
-        Citizen first = dataBase.findBy(passport);
 
-        if (first != null) {
-            System.out.println(first.sayYourName());
-        }
+        Passport passport2 = new Passport("EH", 7567);
+        Citizen citizen2 = new Citizen("Lena","Petrova");
 
-        Passport fakePass = new Passport("EH", 0567);
+        database.add(passport, citizen);
+        database.add(passport1, citizen1);
+        database.add(passport2, citizen2);
 
-        Citizen second = dataBase.findBy(fakePass);
+        System.out.println("Enter serial number:");
+        int seria = sc.nextInt();
 
-        if (second != null) {
-            System.out.println(second.sayYourName());
-        }
+        System.out.println("Find at data base " + database.findBy(p));
+
     }
 }
