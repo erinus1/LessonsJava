@@ -19,13 +19,13 @@ public class Main {
         Citizen citizen2 = new Citizen("Lena","Petrova");
 
         database.add(passport, citizen);
-        database.add(passport1, citizen1);
-        database.add(passport2, citizen2);
 
         System.out.println("Enter serial number:");
         int seria = sc.nextInt();
 
-        System.out.println("Find at data base " + database.findBy(p));
-
+        //System.out.println("Find at data base " + database.findBy(passport));
+        System.out.println(passport.equals(passport1));
+        System.out.println(passport.hashCode());
+        System.out.println(passport1.hashCode());
     }
 }
