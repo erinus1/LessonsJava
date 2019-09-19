@@ -8,22 +8,22 @@ public class Passport {
         this.seria = seria;
         this.number = number;
     }
-
    
-    public boolean equals(Passport passport) {
-        if (passport == this)
+    public boolean equals(Object o) {
+        if (o == this)
             return true;
-        if (passport == null || passport.getClass() != passport.getClass())
+        if (o == null || o.getClass() != this.getClass())
             return false;
 
-        Passport p = (Passport) passport;
+        Passport p = (Passport) o;
         if (number != p.number) return false;
         return seria.equals(p.seria);
     }
+
     @Override
     public int hashCode(){
        int result = seria.hashCode();
-       result = 31*result + number;
-       return result;
+
+       return 31 * result + number;
     }
 }
