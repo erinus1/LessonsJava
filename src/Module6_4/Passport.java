@@ -9,17 +9,21 @@ public class Passport {
         this.number = number;
     }
 
+   
     public boolean equals(Passport passport) {
-        if (passport == this) {
+        if (passport == this)
             return true;
-        }
-        if (passport == null || passport.getClass() != this.getClass()) {
+        if (passport == null || passport.getClass() != passport.getClass())
             return false;
-        }
 
-        Passport passport1 = (Passport) passport;
-        return (this.getClass() == passport1.getClass() || passport1 != null && passport1.equals(passport));
+        Passport p = (Passport) passport;
+        if (number != p.number) return false;
+        return seria.equals(p.seria);
     }
-
-
+    @Override
+    public int hashCode(){
+       int result = seria.hashCode();
+       result = 31*result + number;
+       return result;
+    }
 }
