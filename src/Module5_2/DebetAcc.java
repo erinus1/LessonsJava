@@ -1,4 +1,5 @@
-package Module4_2;
+package Module5_2;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -22,7 +23,6 @@ public class DebetAcc extends BankAcc implements Publisher {
 
     @Override
     public float addMoney(float amount) {
-        System.out.println("Please enter your amount for adding to debet account: ");
         currentAmount += amount;
         notify("Add money", currentAmount);
         return currentAmount;
@@ -31,7 +31,6 @@ public class DebetAcc extends BankAcc implements Publisher {
     @Override
     public float withDraw(float newAmount) {
         currentAmount -= (newAmount + calculateFee(fee, newAmount));
-        System.out.println("Enter your amount for withdraw. Fee will be 1% ");
         notify("Withdraw", currentAmount);
         return newAmount;
     }
@@ -47,8 +46,8 @@ public class DebetAcc extends BankAcc implements Publisher {
 
     @Override
     public void subscribe(Subscriber subscriber, String eventName) {
-        if (subscribers.containsKey(eventName)) { //поиск по ключу ивентНейм
-            ArrayList previousSubscribers = subscribers.get(eventName); //получить подписчика по ивентНемйу и добавить в список
+        if (subscribers.containsKey(eventName)) {
+            ArrayList previousSubscribers = subscribers.get(eventName);
             previousSubscribers.add(subscriber); //
         } else {
             ArrayList<Subscriber> newSubscribers = new ArrayList();
@@ -59,10 +58,6 @@ public class DebetAcc extends BankAcc implements Publisher {
 
     @Override
     public void notify(String eventName, Object data) {
-        // 1 - проверить, есть ли в подписчиках (хэш-мап) нужный ивент
-        // 2 - взять всех подписчеков по имени ивента из хэш-мапа
-        // 3 - пройтись по каждому из подписчиков и вызвать метод "update"
-
         if (subscribers.containsKey(eventName)) {
             ArrayList<Subscriber> allSubs = subscribers.get(eventName);
             for (int i = 0; i < allSubs.size(); i++) {
