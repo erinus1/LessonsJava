@@ -10,7 +10,9 @@ public class Main {
         System.out.println("Input: ");
         //String resultSt = sc.nextLine();
         //System.out.println("Compressed to " + str.compress(resultSt));
-        System.out.println("Compressed to " + str.compress("ABf45")); //1A3a2B\2
+        System.out.println("Compressed to " + str.compress("E\\5"));
+
+        //input: 52llk\\ >> Exception in thread "main" java.lang.NumberFormatException: For input string: "\"
     }
   }
 
