@@ -1,25 +1,59 @@
 package Module6_3;
 
-public class LinkedList{
-    LinkNode head;
+public class LinkedList {
 
-    public LinkedList(){
-        head = new LinkNode("1");
+    Node head; //first element
+
+    public void add(int data)
+    {
+        Node node = new Node();
+        node.data = data;
+        node.next = null;
+
+        if(head == null){
+            head = node;
+        }
+        else{
+            Node nod = head;
+            while (nod.next != null){
+                nod = nod.next;
+            }
+            nod.next = node;
+        }
     }
 
-    private void add(Object item) {
-        //if next - null -> next = new LinkedList(word); if not null - > next.append(word);
+    public void deleteAt(int index)
+    {
+        if(index==0)
+        {
+            head = head.next;
+        }
+        else
+        {
+            Node n = head;
+            Node n1 = null;
+            for(int i=0; i<index-1; i++)
+            {
+                n = n.next;
+            }
+            n1 = n.next;
+            n.next = n1.next;
+            n1 = null;
+        }
     }
 
-    private void remove() {
+    public int get(int index){
+        System.out.println("Get this index: " + index);
+        return index;
     }
 
-    private void get() {
+    public void showList()
+    {
+        Node node = head;
+        while(node.next!=null){
+            System.out.println(node.data);
+            node = node.next;
+        }
+        System.out.println(node.data);
     }
 }
-
-
-
-
-
-
