@@ -27,13 +27,12 @@ public class Decode {
                 } else {
                     stringBuilder.append(string.charAt(i));
                 }
-            } else {
-//            } else if (string.charAt(i) == searchChar) {
+            } else if (string.charAt(i) == searchChar) {
                 stringBuilder.append(string.charAt(i));
             }
         }
+            return stringBuilder.toString();
+        }
 
-        return stringBuilder.toString();
-    }
 }
 

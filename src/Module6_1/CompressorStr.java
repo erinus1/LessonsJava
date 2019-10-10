@@ -3,7 +3,6 @@ package Module6_1;
 public class CompressorStr {
 
     char searchChar = '\\';
-    boolean isFound = false;
 
     public String compress(String string) {
         StringBuilder stringBuilder = new StringBuilder();
