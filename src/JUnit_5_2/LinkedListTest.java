@@ -55,6 +55,12 @@ public class LinkedListTest {
     @Test
     public void remove() {
 
+        name.add("Olena");
+        name.add("Nickolay");
+
+        name1.add("Olena");
+        name1.add("Nickolay");
+        
         name.remove(1);
         name1.remove(1);
 
