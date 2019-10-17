@@ -8,14 +8,15 @@ public class Main {
     public static void main(String [] args){
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter an email: ");
-        String email = scanner.nextLine();
+        System.out.println("Enter an email 1-30 (letters with special symbols:) ");
+        //String email = scanner.nextLine();
 
-        String pattern = "";
+        String patternEmail = "([a-zA-Z0-9]){1,30} [@]{1} ([a-z]){1,6}[\\.]([a-z]{2,5})";
 
-        Pattern res = Pattern.compile(pattern);
-        Matcher m = res.matcher(email);
-
+        Pattern res = Pattern.compile(patternEmail);
+        Matcher m = res.matcher("alex99");
+        boolean result = m.matches();
+        System.out.println("Email is valid: " + result);
     }
 
 }

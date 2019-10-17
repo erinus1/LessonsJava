@@ -60,7 +60,7 @@ public class LinkedListTest {
 
         name1.add("Olena");
         name1.add("Nickolay");
-        
+
         name.remove(1);
         name1.remove(1);
 
