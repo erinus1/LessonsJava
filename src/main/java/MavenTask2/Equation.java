@@ -1,4 +1,4 @@
-package MavenTask2;
+package main.java.MavenTask2;
 
 import java.util.ArrayList;
 
