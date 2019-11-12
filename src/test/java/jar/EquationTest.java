@@ -1,11 +1,9 @@
-package main.java.MavenTask2;
+package test.java.jar;
 
+import main.java.MavenTask2.Equation;
 import org.junit.Test;
-
+import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
-
-import static org.junit.Assert.*;
-
 
 public class EquationTest {
     @Test

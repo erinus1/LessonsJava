@@ -52,7 +52,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>main.java.MavenTask2.MainEquation</mainClass>
+                            <mainClass>main.java.MavenTask2.EquationEquation</mainClass>
                         </manifest>
                     </archive>
 

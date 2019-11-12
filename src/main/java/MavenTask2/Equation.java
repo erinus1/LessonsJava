@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 public class Equation {
 
-    Equation() {
+    public Equation() {
+    }
+
+    public static void main(String[] args) {
     }
 
     public ArrayList<Double> calculate(double a, double b, double c) {
