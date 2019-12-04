@@ -1,6 +1,6 @@
-package Module6_1;
+package JUnit_5_1;
 
-public class CompressorStr {
+public class Encode {
 
     char searchChar = '\\';
 

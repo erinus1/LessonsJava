@@ -1,4 +1,4 @@
-package Module6_2;
+package JUnit_5_1;
 
 public class Decode {
 
@@ -6,10 +6,6 @@ public class Decode {
 
     public String decompress(String string) {
         StringBuilder stringBuilder = new StringBuilder();
-
-        // "3" => "3"
-        // "3h" => "hhh"
-        // "3h\22b" => "hhh\2bb"
 
         for (int i = 0; i < string.length(); i++) {
             if (Character.isDigit(string.charAt(i))) {
@@ -27,12 +23,11 @@ public class Decode {
                 } else {
                     stringBuilder.append(string.charAt(i));
                 }
-            } else if (string.charAt(i) == searchChar) {
+           } else if (string.charAt(i) == searchChar) {
                 stringBuilder.append(string.charAt(i));
             }
         }
-            return stringBuilder.toString();
-        }
-
+        return stringBuilder.toString();
+    }
 }
 
