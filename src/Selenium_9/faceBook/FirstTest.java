@@ -1,4 +1,4 @@
-package faceBook;
+package Selenium_9.faceBook;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -23,17 +23,19 @@ public class FirstTest {
         WebElement button = driver.findElement(By.cssSelector("div:nth-child(3) > input, [data-id='verification']"));
         button.click();
 
-        Thread.sleep(5000);
+        Thread.sleep(10000);
+
         boolean textFound = false;
         try {
-            driver.findElement(By.cssSelector("div.item-login > span.name.ellipsis"));
+            driver.findElement(By.cssSelector("div.item-login > span.name.ellipsis")).click();
             textFound = true;
             System.out.println("You are login");
+
         } catch (Exception e) {
             textFound = false;
+
         }
-
-        driver.close();
+        driver.quit();
     }
-
 }
+
