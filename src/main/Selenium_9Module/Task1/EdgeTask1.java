@@ -1,4 +1,4 @@
-package Selenium_9Module.Task1;
+package main.Selenium_9Module.Task1;
 /*
 Initialize Edge Driver
 Navigate to the interested webpage for e.g. https://en.wikipedia.org/wiki/Main_Page
@@ -31,11 +31,13 @@ import java.util.List;
 
         @Test
         public void getLinks() throws InterruptedException {
+            Thread.sleep(6000);
             driver.get("https://en.wikipedia.org/wiki/Main_Page");
+
             List<WebElement> links = driver.findElements(By.tagName("a"));
-            Thread.sleep(2000);
             for (WebElement link : links) {
-                logger.debug(link.getAttribute("There are list of href"));
+                logger.info(link.getAttribute("href"));
             }
+            driver.quit();
         }
     }
