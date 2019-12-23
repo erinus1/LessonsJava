@@ -5,8 +5,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.HasInputDevices;
+import org.openqa.selenium.interactions.Locatable;
+import org.openqa.selenium.interactions.Mouse;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class P140_DemoQa {
 
@@ -26,8 +35,26 @@ public class P140_DemoQa {
 
     }
 
-    public void select3(){
-        WebElement item1 = driver.findElement(By.xpath("//li[contains(.,'Item 1')]"));
+    public void selectItems() throws InterruptedException {
+
+        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+
+        Actions actions = new Actions(driver);
+
+        WebElement menuOption = driver.findElement(By.xpath("//*[@id=\"selectable\"]/li[1]"));
+        WebElement menuOption1 = driver.findElement(By.xpath("//*[@id=\"selectable\"]/li[3]"));
+
+        Thread.sleep(16000);
+
+        Actions builder = new Actions(driver);
+        actions.keyDown(Keys.LEFT_CONTROL).click().build().perform();
+        actions.click(menuOption).build().perform();
+        actions.keyUp(Keys.LEFT_CONTROL).click().build().perform();
+
+
+
+
+
 
     }
 }
