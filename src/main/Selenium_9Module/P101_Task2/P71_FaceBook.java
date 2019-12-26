@@ -1,4 +1,4 @@
-package Selenium_9Module.FirstTest;
+package main.Selenium_9Module.P101_Task2;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -6,9 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FaceBook {
+public class P71_FaceBook {
 
-    final static Logger logger = LogManager.getLogger(FaceBook.class);
+    final static Logger logger = LogManager.getLogger(P71_FaceBook.class);
 
     @Test
     public void firstTest() throws InterruptedException {

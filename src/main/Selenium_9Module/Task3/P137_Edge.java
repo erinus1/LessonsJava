@@ -1,4 +1,4 @@
-package main.Selenium_9Module.Task1;
+package main.Selenium_9Module.Task3;
 /*
 Initialize Edge Driver
 Navigate to the interested webpage for e.g. https://en.wikipedia.org/wiki/Main_Page
@@ -17,10 +17,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import java.util.List;
 
-    public class EdgeTask1 {
+    public class P137_Edge {
 
         private WebDriver driver = null;
-        final Logger logger = LogManager.getLogger(EdgeTask1.class);
+        final Logger logger = LogManager.getLogger(P137_Edge.class);
 
         @Before
         public void createDriver() {
