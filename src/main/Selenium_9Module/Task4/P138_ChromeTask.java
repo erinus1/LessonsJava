@@ -1,18 +1,39 @@
-package main.Selenium_9Module.Task4F;
+package main.Selenium_9Module.Task4;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.assertTrue;
+
+/*
+/1. For  Chrome  and Edge – open the browser
+2. Goto google.com
+3. Search for something that:
+	3.1 is located on the first page of search results
+	3.2  is located  further then 10th page
+	3.3   is not in the search results
+4. Save  screenshot if result is found
+5. Provide user with the corresponding error message if result is not found
+6. Print to Console  Page number if result is found
+
+Example:
+1. We  enter “selenium automation testing”  and find that “seleniumhq.org”  is on the 1st page
+2. We  enter “осциллограф”  and find that “vit.ua”  is on  some  page
+3. We enter “абракадабра”  and find that “kpi.ua” is not in the search results
+
+ */
 
 public class P138_ChromeTask {
 
@@ -38,7 +59,7 @@ public class P138_ChromeTask {
     public void findLinks() {
         driver.get("https://www.google.com");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 
         //first screenshot 1 page
@@ -67,32 +88,28 @@ public class P138_ChromeTask {
         button10.click();
         logger.info("Please see a screenshot of 10th page");
         testTakesScreenshot("page10");
-
-        driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 
         //third not found
         WebElement search10 = driver.findElementByXPath("//*[@id=\"tsf\"]/div[2]/div[1]/div[2]/div/div[2]/input");
         search10.clear();
-        search10.sendKeys("абырвалг");
+        search10.sendKeys("абракадабра");
         search10.sendKeys(Keys.ENTER);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        List<WebElement> links = driver.findElements(By.tagName("a"));
-        try {
-        WebElement link3 = driver.findElement(By.partialLinkText("ru.wikipedia.org/wiki"));
 
-            for (WebElement link : links) {
-                if (links.equals(link3)) {
-                    logger.info("Link 3rd was found");
-                }
-            }
-        } catch (NoSuchElementException err) {
-            err.printStackTrace();
-            logger.info("This link not found on this page");
+        try {
+            driver.findElement((By.partialLinkText("en.wikipedia.org")));
+            Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                    .withTimeout(Duration.ofMillis(300))
+                    .pollingEvery(Duration.ofMillis(600))
+                    .ignoring(NoSuchElementException.class);
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+            logger.info("Please see a screenshot of page with No Result");
+            testTakesScreenshot("3rdLink");
+
+        } finally {
+            driver.quit();
         }
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        logger.info("Please see a screenshot of page");
-        testTakesScreenshot("3rdLink");
-        driver.quit();
     }
 }
 

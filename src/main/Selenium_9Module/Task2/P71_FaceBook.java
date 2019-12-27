@@ -1,4 +1,5 @@
-package main.Selenium_9Module.P101_Task2;
+package main.Selenium_9Module.Task2;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -6,6 +7,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
+
+/*
+Launch new Browser
+Open URL http://facebook.com
+Type Login
+Type Password
+Click on Вход button
+Check that you have logged in
+Close the Browser
+
+ */
+
+//CL block this site
 public class P71_FaceBook {
 
     final static Logger logger = LogManager.getLogger(P71_FaceBook.class);
@@ -26,7 +42,7 @@ public class P71_FaceBook {
         WebElement button = driver.findElement(By.cssSelector("div:nth-child(3) > input, [data-id='verification']"));
         button.click();
 
-        Thread.sleep(10000);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
         boolean textFound = false;
         try {
@@ -36,7 +52,8 @@ public class P71_FaceBook {
 
         } catch (Exception elementNotFound) {
             logger.info("Element was not found");
-            driver.quit();
+
         }
+        driver.quit();
     }
 }
