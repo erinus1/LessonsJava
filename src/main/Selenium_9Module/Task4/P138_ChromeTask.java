@@ -49,7 +49,7 @@ public class P138_ChromeTask {
     public void testTakesScreenshot(String fileName) {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileHandler.copy(scrFile, new File("C:\\Users\\Sofiia_Bondarenko\\Desktop\\" + fileName + ".png"));
+            FileHandler.copy(scrFile, new File("C:\\Users\\Sofiia_Bondarenko\\Documents\\GitHub\\LessonsJava - MentoringProgram\\Screen" + fileName + ".png"));
         } catch (IOException error) {
             error.printStackTrace();
         }
