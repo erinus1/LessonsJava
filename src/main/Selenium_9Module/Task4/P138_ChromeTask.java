@@ -41,7 +41,7 @@ public class P138_ChromeTask {
     ChromeDriver driver = driverInit();
 
     public ChromeDriver driverInit() {
-        String exePath = "C:/Users/Sofiia_Bondarenko/Downloads/chromedriver_win32/chromedriver.exe";
+        String exePath = "C:\\Users\\Sofiia_Bondarenko\\Documents\\GitHub\\LessonsJava - MentoringProgram\\drivers\\chrome\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", exePath);
         return new ChromeDriver();
     }
