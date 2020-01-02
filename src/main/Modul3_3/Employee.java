@@ -1,4 +1,4 @@
-package Modul3_3;
+package main.Modul3_3;
 import java.util.Random;
 
 public class Employee {

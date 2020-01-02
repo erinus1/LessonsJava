@@ -1,4 +1,4 @@
-package JUnit_5_1;
+package main.JUnit_5_1;
 
 public class Decode {
 

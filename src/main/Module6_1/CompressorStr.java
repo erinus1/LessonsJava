@@ -1,4 +1,4 @@
-package Module6_1;
+package main.Module6_1;
 
 public class CompressorStr {
 

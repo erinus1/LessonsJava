@@ -1,4 +1,4 @@
-package Modul_3_1;//package Modul_3;
+package main.Modul_3_1;//package Modul_3;
 
 //task 1
 

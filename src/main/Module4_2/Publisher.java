@@ -1,4 +1,4 @@
-package Module4_2;
+package main.Module4_2;
 
 public interface Publisher {
     public void subscribe(Subscriber subscriber, String eventName);

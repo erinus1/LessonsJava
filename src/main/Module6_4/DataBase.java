@@ -1,4 +1,4 @@
-package Module6_4;
+package main.Module6_4;
 
 import java.util.HashMap;
 

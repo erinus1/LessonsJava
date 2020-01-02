@@ -1,4 +1,4 @@
-package Modul3_3;
+package main.Modul3_3;
 
 public class Information extends Employee {
 

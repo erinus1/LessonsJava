@@ -1,4 +1,6 @@
-package Module5_2;
+package main.Module5_2;
+
+import Module5_2.Subscriber;
 
 import java.util.ArrayList;
 import java.util.HashMap;

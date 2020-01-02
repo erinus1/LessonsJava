@@ -1,4 +1,4 @@
-package Module5_1;
+package main.Module5_1;
 
 public class Point {
 

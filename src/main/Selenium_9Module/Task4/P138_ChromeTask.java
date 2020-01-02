@@ -41,15 +41,15 @@ public class P138_ChromeTask {
     ChromeDriver driver = driverInit();
 
     public ChromeDriver driverInit() {
-        String exePath = "C:\\Users\\Sofiia_Bondarenko\\Documents\\GitHub\\LessonsJava - MentoringProgram\\drivers\\chrome\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", exePath);
+        String exePath = "drivers\\chromedriver.exe";
+        System.setProperty("webdriver.chrome.drive", exePath);
         return new ChromeDriver();
     }
 
     public void testTakesScreenshot(String fileName) {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileHandler.copy(scrFile, new File("C:\\Users\\Sofiia_Bondarenko\\Documents\\GitHub\\LessonsJava - MentoringProgram\\Screen" + fileName + ".png"));
+            FileHandler.copy(scrFile, new File("Screen" + fileName + ".png"));
         } catch (IOException error) {
             error.printStackTrace();
         }

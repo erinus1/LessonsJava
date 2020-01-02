@@ -1,4 +1,4 @@
-package Module6_4;
+package main.Module6_4;
 
 public class Citizen {
     String firstName;

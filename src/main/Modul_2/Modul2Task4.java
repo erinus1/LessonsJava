@@ -1,4 +1,4 @@
-package Modul_2;
+package main.Modul_2;
 
 public class Modul2Task4 {
     public static void main(String[] args) {

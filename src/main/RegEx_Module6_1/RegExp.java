@@ -1,4 +1,4 @@
-package RegEx_Module6_1;
+package main.RegEx_Module6_1;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;

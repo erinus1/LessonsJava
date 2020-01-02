@@ -1,6 +1,6 @@
-package JUnit_5_1;
+package main.JUnit_5_1;
 
-import Module6_2.Decode;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 

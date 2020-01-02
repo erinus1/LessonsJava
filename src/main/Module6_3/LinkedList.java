@@ -1,4 +1,4 @@
-package Module6_3;
+package main.Module6_3;
 
 public class LinkedList {
 

@@ -1,4 +1,4 @@
-package Module5_2;
+package main.Module5_2;
 
 abstract class BankAcc {
 
