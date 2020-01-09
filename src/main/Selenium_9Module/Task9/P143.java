@@ -49,6 +49,7 @@ public class P143 {
         logger.info("Text is: " + toolTipText);
         logger.info("Is identical :" + toolTipText.equals(expectedText));
 
+        driver.quit();
         }
     }
 
