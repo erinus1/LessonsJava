@@ -1,6 +1,6 @@
 package main.Selenium_9Module.Task10;
 
-
+import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Before;
@@ -10,6 +10,8 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertTrue;
 
@@ -22,36 +24,23 @@ Move slider randomly
 Get sliders’ current position and print to console
 
  */
-public class P144 {
-
-    final Logger logger = LogManager.getLogger(P144.class);
-    ChromeDriver driver = driverInit();
-
-    public ChromeDriver driverInit() {
-        String exePath = "src\\drivers\\chrome\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", exePath);
-        return new ChromeDriver();
-    }
+public class P144 extends Driver {
+    public static final Logger logger = LogManager.getLogger();
 
     @Before
-
     public void set() {
         driver.get("https://demoqa.com/slider/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-
     public void getCoord(WebElement item) {
-        WebElement element = driver.findElementByXPath("//*[@id=\"slider\"]/span");
+        WebElement element = driver.findElement(By.xpath("//*[@id=\"slider\"]/span"));
         Point position = element.getLocation();
         logger.info("Moved to : " + position);
-
     }
 
     @Test
-
     public void moveSlider(){
-
         WebElement slider = driver.findElement(By.xpath("//*[@id=\"slider\"]/span"));
         getCoord(slider);
 
@@ -62,15 +51,13 @@ public class P144 {
         String sliderPercent = slider.getAttribute("style");
         assertTrue(sliderPercent.contains("left: 50%"));
 
+        Random rand = new Random();
         actions.clickAndHold(slider);
-        actions.dragAndDropBy(slider, 170, 0).build().perform();
+        //actions.dragAndDropBy(slider,rand() .build().perform()); //need random coordinates <<<<
         getCoord(slider);
         String randonPersent = slider.getAttribute("style");
         assertTrue(randonPersent.contains("left: 83%"));
-
         driver.quit();
-
     }
-
 }
 

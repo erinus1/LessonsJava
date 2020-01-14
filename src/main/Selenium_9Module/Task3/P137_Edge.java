@@ -1,5 +1,6 @@
 package main.Selenium_9Module.Task3;
 
+import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Before;
@@ -7,7 +8,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -19,21 +20,19 @@ Collect all the links from the webpage. All the links are associated with the Ta
 Now iterate through every link and print the Link Text on the console screen.
  */
 
-    public class P137_Edge {
-
+    public class P137_Edge extends Driver {
         private WebDriver driver = null;
         final Logger logger = LogManager.getLogger(P137_Edge.class);
 
         @Before
-        public void createDriver() {
-            String exePath = "C:\\Users\\Sofiia_Bondarenko\\Documents\\GitHub\\LessonsJava - MentoringProgram\\drivers\\MicrosoftWebDriver.exe";
+        public ChromeDriver driverInit() {
+            String exePath = "src\\drivers\\edge\\MicrosoftWebDriver.exe";
             System.setProperty("webdriver.edge.driver", exePath);
-            driver = new EdgeDriver();
+            return new ChromeDriver();
         }
 
         @Test
-        public void getLinks() throws InterruptedException {
-
+        public void getLinks() {
             driver.get("https://en.wikipedia.org/wiki/Main_Page");
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             List<WebElement> links = driver.findElements(By.tagName("a"));

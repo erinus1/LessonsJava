@@ -1,5 +1,6 @@
 package main.Selenium_9Module.Task2;
 
+import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -22,12 +23,11 @@ Close the Browser
  */
 
 //CL block this site
-public class P71_FaceBook {
-
-    final static Logger logger = LogManager.getLogger(P71_FaceBook.class);
+public class P71_FaceBook extends Driver {
+    public static final Logger logger = LogManager.getLogger();
 
     @Test
-    public void firstTest() throws InterruptedException {
+    public void firstTest() {
         System.setProperty("webdriver.chrome.driver", "C:/Users/Sofiia_Bondarenko/Downloads/chromedriver_win32/chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
 
@@ -52,7 +52,6 @@ public class P71_FaceBook {
 
         } catch (Exception elementNotFound) {
             logger.info("Element was not found");
-
         }
         driver.quit();
     }

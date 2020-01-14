@@ -1,5 +1,6 @@
 package main.Selenium_9Module.Task11;
 
+import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Before;
@@ -7,14 +8,10 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /*
@@ -23,16 +20,8 @@ import static org.junit.Assert.assertTrue;
 3 check that this date was selected
 
  */
-public class P145 {
-
-    final Logger logger = LogManager.getLogger(P145.class);
-    ChromeDriver driver = driverInit();
-
-    public ChromeDriver driverInit() {
-        String exePath = "src\\drivers\\chrome\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", exePath);
-        return new ChromeDriver();
-    }
+public class P145 extends Driver {
+    public static final Logger logger = LogManager.getLogger();
 
     @Before
     public void set() {
@@ -42,11 +31,9 @@ public class P145 {
     }
 
     public boolean isThisDateValid (String dateToValidate, String dateFormat){
-
         if (dateToValidate == null) {
             return false;
         }
-
         SimpleDateFormat format = new SimpleDateFormat(dateFormat);
         format.setLenient(false);
 
@@ -59,27 +46,20 @@ public class P145 {
             e.printStackTrace();
             return false;
         }
-
         return true;
     }
 
     @Test
-
     public void selectDate() {
-
         WebElement date = driver.findElement(By.id("datepicker"));
         date.click();
-
         WebElement clickDate = driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr[3]/td[3]/a"));
         clickDate.click();
         logger.info("Selected date is " + clickDate.getText());
-
         assertTrue(isThisDateValid("01/14/2020", "MM/dd/yyyy"));
-
         driver.quit();
         }
-
-}
+    }
 
 
 

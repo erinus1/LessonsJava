@@ -1,48 +1,34 @@
 package main.Selenium_9Module.Task6;
 
+import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
-
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.Date;
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 /*
 Open https://demoqa.com/selectable/
 Select randomly any 3  elements
 Create  the screenshot  with the name (3 elements selected + current  timestamp)
-
  */
 
-public class P140_Select {
+    public class P140_Select extends Driver {
+        public static final Logger logger = LogManager.getLogger();
 
-    final Logger logger = LogManager.getLogger(P140_Select.class);
-    ChromeDriver driver = driverInit();
-
-
-    public ChromeDriver driverInit() {
-        String exePath = "src\\drivers\\chrome\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", exePath);
-        return new ChromeDriver();
-    }
-
-        String pattern = "yyyy-MM-dd";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String date = simpleDateFormat.format(new Date());
-
+    String pattern = "yyyy-MM-dd";
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+    String date = simpleDateFormat.format(new Date());
 
     public void testTakesScreenshot() {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
         try {
             String fileName = "3Items-";
             FileHandler.copy(scrFile, new File("src\\Screen" + fileName + date + ".png"));
@@ -75,5 +61,4 @@ public class P140_Select {
         logger.info("Check the screen");
         driver.quit();
     }
-
 }

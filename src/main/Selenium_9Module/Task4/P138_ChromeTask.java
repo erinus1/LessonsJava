@@ -1,5 +1,6 @@
 package main.Selenium_9Module.Task4;
 
+import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
@@ -35,21 +36,14 @@ Example:
 
  */
 
-public class P138_ChromeTask {
-
-    final Logger logger = LogManager.getLogger(P138_ChromeTask.class);
-    ChromeDriver driver = driverInit();
-
-    public ChromeDriver driverInit() {
-        String exePath = "drivers\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.drive", exePath);
-        return new ChromeDriver();
-    }
+public class P138_ChromeTask extends Driver {
+    public static final Logger logger = LogManager.getLogger();
 
     public void testTakesScreenshot(String fileName) {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
         try {
-            FileHandler.copy(scrFile, new File("Screen" + fileName + ".png"));
+            FileHandler.copy(scrFile, new File("src\\Screen" + fileName + ".png"));
         } catch (IOException error) {
             error.printStackTrace();
         }
@@ -60,7 +54,6 @@ public class P138_ChromeTask {
         driver.get("https://www.google.com");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
 
         //first screenshot 1 page
         WebElement searchField = driver.findElement(By.cssSelector("input[name=\"q\"]"));
@@ -78,7 +71,7 @@ public class P138_ChromeTask {
 
 
         //second link 10 page
-        WebElement input = driver.findElementByXPath("//*[@id='tsf']/div[2]/div[1]/div[2]/div/div[2]/input");
+        WebElement input = driver.findElement(By.xpath("//*[@id='tsf']/div[2]/div[1]/div[2]/div/div[2]/input"));
         input.clear();
         input.sendKeys("осциллограф");
         input.sendKeys(Keys.ENTER);
@@ -91,7 +84,7 @@ public class P138_ChromeTask {
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 
         //third not found
-        WebElement search10 = driver.findElementByXPath("//*[@id=\"tsf\"]/div[2]/div[1]/div[2]/div/div[2]/input");
+        WebElement search10 = driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[2]/div/div[2]/input"));
         search10.clear();
         search10.sendKeys("абракадабра");
         search10.sendKeys(Keys.ENTER);
