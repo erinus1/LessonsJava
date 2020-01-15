@@ -57,6 +57,7 @@ public class P144 extends Driver {
 
         String sliderPercent = slider.getAttribute("style");
         assertTrue(sliderPercent.contains("left: 50%"));
+        logger.info("Goal is: " + sliderPercent);
         actions.clickAndHold(slider);
 
         actions.dragAndDropBy(slider, generate(20, 90), 0).build().perform(); //need random coordinates <<<<
