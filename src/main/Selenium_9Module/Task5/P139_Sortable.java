@@ -10,11 +10,11 @@ import java.util.concurrent.TimeUnit;
 
 //page 139
 public class P139_Sortable extends Driver {
-
     public static final Logger logger = LogManager.getLogger();
 
     @Test
     public void sortItem() {
+        driverInit();
         driver.get("https://demoqa.com/sortable/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

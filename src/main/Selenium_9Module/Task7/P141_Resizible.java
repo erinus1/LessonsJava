@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import java.util.concurrent.TimeUnit;
 
@@ -25,7 +24,6 @@ public class P141_Resizible extends Driver {
 
     @Before
     public void set() {
-        super.driverInit(driver);
         driver.get("https://demoqa.com/resizable/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

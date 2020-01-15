@@ -1,13 +1,10 @@
 package main.Selenium_9Module.Task2;
-
 import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.util.concurrent.TimeUnit;
 
 
@@ -28,9 +25,6 @@ public class P71_FaceBook extends Driver {
 
     @Test
     public void firstTest() {
-        System.setProperty("webdriver.chrome.driver", "C:/Users/Sofiia_Bondarenko/Downloads/chromedriver_win32/chromedriver.exe");
-        ChromeDriver driver = new ChromeDriver();
-
         driver.get("https://hotline.ua/login/");
 
         WebElement emailElement = driver.findElement(By.cssSelector("d[class='form-item'] input, [name=login]"));

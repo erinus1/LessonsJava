@@ -1,6 +1,4 @@
 package main.Selenium_9Module.Task3;
-
-import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Before;
@@ -8,7 +6,6 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -20,15 +17,15 @@ Collect all the links from the webpage. All the links are associated with the Ta
 Now iterate through every link and print the Link Text on the console screen.
  */
 
-    public class P137_Edge extends Driver {
+    public class P137_Edge {
         private WebDriver driver = null;
         final Logger logger = LogManager.getLogger(P137_Edge.class);
 
         @Before
-        public ChromeDriver driverInit() {
+        public void driverInit() {
             String exePath = "src\\drivers\\edge\\MicrosoftWebDriver.exe";
             System.setProperty("webdriver.edge.driver", exePath);
-            return new ChromeDriver();
+            driverInit();
         }
 
         @Test

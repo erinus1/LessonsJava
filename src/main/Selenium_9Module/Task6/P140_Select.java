@@ -1,11 +1,10 @@
 package main.Selenium_9Module.Task6;
-
 import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
-
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import java.io.File;
@@ -21,6 +20,13 @@ Create  the screenshot  with the name (3 elements selected + current  timestamp)
 
     public class P140_Select extends Driver {
         public static final Logger logger = LogManager.getLogger();
+
+    @Before
+    public void set() {
+        driver.get("https://demoqa.com/selectable/");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        }
 
     String pattern = "yyyy-MM-dd";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);

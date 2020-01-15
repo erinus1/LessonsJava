@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 import java.io.File;
 import java.io.IOException;
@@ -23,7 +22,7 @@ Take Screenshot of the “In the news” container
  */
 public class P101_Wiki extends Driver {
     public static final Logger logger = LogManager.getLogger();
-
+    
     @Before
     public void set() {
         driver.get("https://en.wikipedia.org/wiki/Main_Page");

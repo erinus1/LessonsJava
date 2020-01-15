@@ -4,14 +4,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Driver {
 
-    public static WebDriver driver;
-    static {
-        driver = null;
-    }
+    public static WebDriver driver = driverInit();
 
-    public ChromeDriver driverInit() {
-        String exePath = "C:/Users/Sofiia_Bondarenko/Downloads/chromedriver_win32/chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", exePath);
-        return new ChromeDriver();
+    public static WebDriver driverInit() {
+        if(driver == null) {
+            String exePath = "src\\drivers\\chrome\\chromedriver.exe";
+            System.setProperty("webdriver.chrome.driver", exePath);
+            return new ChromeDriver();
+        }
+        else {
+            return driver;
+        }
     }
 }

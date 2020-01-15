@@ -1,7 +1,5 @@
 package main.Selenium_9Module.Task8;
-
 import main.Selenium_9Module.Driver;
-import main.Selenium_9Module.Task4.P138_ChromeTask;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Before;
@@ -9,10 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-
-import javax.swing.*;
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -25,6 +20,7 @@ public class P142 extends Driver {
 
     @Before
     public void set() {
+        driverInit();
         driver.get("https://demoqa.com/tooltip-and-double-click/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -33,7 +29,6 @@ public class P142 extends Driver {
 
     @Test
     public void checkButtons() {
-
         //button1
         WebElement doubleCl = driver.findElement(By.id("doubleClickBtn"));
 
