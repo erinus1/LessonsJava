@@ -11,6 +11,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 /*
 Open https://demoqa.com/selectable/
@@ -50,21 +52,38 @@ Create  the screenshot  with the name (3 elements selected + current  timestamp)
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
 
         Actions actions = new Actions(driver);
+        /*
         WebElement menuOption = driver.findElement(By.xpath("//*[@id=\"selectable\"]/li[1]"));
         WebElement menuOption2 = driver.findElement(By.xpath("//*[@id=\"selectable\"]/li[2]"));
         WebElement menuOption3 = driver.findElement(By.xpath("//*[@id=\"selectable\"]/li[6]"));
 
+         */
+
+        List<WebElement> items = driver.findElements(By.xpath("//ol[@id='selectable']/li"));
+        int size = items.size();
+        logger.info(size);
+        int randomNumber = ThreadLocalRandom.current().nextInt(0, size);
+        items.get(randomNumber).click();
+        actions.keyDown(Keys.LEFT_CONTROL).perform();
+        items.get(randomNumber).click();
+        items.get(randomNumber).click();
+        actions.keyUp(Keys.LEFT_CONTROL).perform();
+
+/*
         driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
-        actions.click(menuOption).perform();
+        actions.click(items).perform();
         actions.keyDown(Keys.LEFT_CONTROL).perform();
         actions.click(menuOption2).perform();
         actions.click(menuOption3).perform();
         actions.keyUp(Keys.LEFT_CONTROL).perform();
 
+
+ */
+
         logger.info("3 items is found");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
         testTakesScreenshot();
         logger.info("Check the screen");
-        driver.quit();
+        //driver.quit();
     }
 }
