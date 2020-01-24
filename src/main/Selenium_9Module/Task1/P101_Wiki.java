@@ -1,4 +1,5 @@
 package main.Selenium_9Module.Task1;
+
 import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,7 +19,6 @@ import org.openqa.selenium.Point;
 Navigate to https://en.wikipedia.org/wiki/Main_Page
 Take Screenshot of the first Image  in the “Did you know...” container
 Take Screenshot of the “In the news” container
-
  */
 public class P101_Wiki extends Driver {
     public static final Logger logger = LogManager.getLogger();
@@ -46,7 +46,7 @@ public class P101_Wiki extends Driver {
     @Test
     public void shootWebElement() throws IOException {
         WebElement area1 = driver.findElement(By.xpath("//div[contains(@id,'mp-itn')]"));
-        WebElement area2 = driver.findElement(By.xpath("//*[@id='mp-dyk']"));
+        WebElement area2 = driver.findElement(By.xpath("//*[@id=\"mp-dyk\"]/div[1]/div/a/img"));
         logger.info("News block:");
         getCoord(area1);
         logger.info("Did you know block:");
