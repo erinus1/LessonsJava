@@ -1,4 +1,5 @@
 package main.Selenium_9Module.Task6;
+
 import main.Selenium_9Module.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,12 +15,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
 /*
 Open https://demoqa.com/selectable/
 Select randomly any 3  elements
 Create  the screenshot  with the name (3 elements selected + current  timestamp)
  */
-
     public class P140_Select extends Driver {
         public static final Logger logger = LogManager.getLogger();
 
