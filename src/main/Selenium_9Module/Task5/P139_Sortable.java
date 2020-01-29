@@ -18,7 +18,7 @@ public class P139_Sortable extends Driver {
     public static final Logger logger = LogManager.getLogger();
 
     @Test
-    public void sortItem() throws InterruptedException {
+    public void sortItem() {
         driverInit();
         driver.get("https://demoqa.com/sortable/");
         driver.manage().window().maximize();
@@ -28,23 +28,15 @@ public class P139_Sortable extends Driver {
         for(WebElement item: menuItems) {
             logger.info("Custom sorting: " + '\n' +item.getText());
         }
-        WebElement source = driver.findElement(By.xpath("//li[contains(.,'Item 2')]"));
-        WebElement target = driver.findElement(By.xpath("//li[contains(.,'Item 5')]"));
+        WebElement two = driver.findElement(By.xpath("//li[contains(.,'Item 2')]"));
+        WebElement five = driver.findElement(By.xpath("//li[contains(.,'Item 5')]"));
 
         Actions builder = new Actions(driver);
-
-        int x=target.getLocation().getX();
-        int y=target.getLocation().getY();
-
-        //builder.moveToElement(source).clickAndHold();
-        //builder.moveToElement(target).clickAndHold(target).perform();
-
-        builder.dragAndDropBy(source, x, y).clickAndHold(source).perform();
+        builder.dragAndDrop(five, two).perform();
 
         for(WebElement item: menuItems) {
             logger.info("New sorting: " +'\n'+ item.getText());
             }
-        //driver.quit();
+        driver.quit();
         }
     }
-
