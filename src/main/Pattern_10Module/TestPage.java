@@ -1,37 +1,16 @@
 package main.Pattern_10Module;
-
-import main.Selenium_9Module.Driver;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.PageFactory;
 
-
-/*
-public class TestPage {
-    public static final int WAIT_20=20;
-
-    @Before
-    public void set() {
-        driver.get("http://automationpractice.com/index.php");
-        driver.manage().timeouts().implicitlyWait(WAIT_20, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-    }
-
-    @After
-    public void close() {
-        //driver.quit();
-    }
+public class TestPage extends BasePage {
 
     @Test
-    public void goToCategory(){
-        DressPage dressPage = new DressPage(driver);
-        DressPage dress = dressPage.hover();
-        dress.hover();
-
+    public void checkTest(){
+    DressPage dressPage = PageFactory.initElements(driver, DressPage.class);
+    dressPage.openUrl("http://automationpractice.com/index.php");
+    dressPage.checkColors();
 
     }
 }
 
 
- */
