@@ -9,6 +9,7 @@ public class TestPage extends BasePage {
     DressPage dressPage = PageFactory.initElements(driver, DressPage.class);
     dressPage.openUrl("http://automationpractice.com/index.php");
     dressPage.checkColors();
+    dressPage.checkEquals();
 
     }
 }
