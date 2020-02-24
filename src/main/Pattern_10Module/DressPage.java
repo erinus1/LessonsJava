@@ -1,5 +1,7 @@
 package main.Pattern_10Module;
 
+import com.sun.source.tree.AssertTree;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,20 +38,18 @@ public class DressPage extends BasePage {
 
     public String openUrl(String url) {
         driver.get(String.valueOf(url));
+        dressButton.click();
         setWait();
         String dressURL = driver.getCurrentUrl();
-//      Assert.assertTrue(dressURL.contains("id_category=8&controller=category"));
+        Assert.assertTrue(dressURL.contains("id_category=8&controller=category"));
         return url;
     }
 
-    public void checkColors() {
-        dressButton.click();
+    public HashMap<String, Integer> getExpectedColors(HashMap <String, Integer> expMap) {
         setWait();
-
         //remove () from collection
         for (WebElement panel : listOfColors) {
             String colors = panel.getText();
-
             String[] colorAndCount = colors.replaceAll("(\\w+\\s?)\\((\\s?\\d+\\s?)\\)", "$1-$2").trim().split("-");
             String color = colorAndCount[0].trim().toLowerCase();
             Integer count = Integer.parseInt(colorAndCount[1].trim().toLowerCase());
@@ -60,7 +60,10 @@ public class DressPage extends BasePage {
                 menuMap.put(color, count);
             }
         }
+        return expMap;
+    }
 
+        public HashMap<String, Integer> getPageColors(HashMap <String, Integer> actMap) {
         //split href color to list
         for (WebElement itemsDress : dressOfColors) {
             String urlCol = itemsDress.getAttribute("href");
@@ -71,6 +74,7 @@ public class DressPage extends BasePage {
                 dressMap.put(hrefRes, 1);
             }
         }
+        return actMap;
     }
 
     public boolean checkEquals() {
@@ -78,7 +82,7 @@ public class DressPage extends BasePage {
             if (dressMap.containsKey(me.getKey()));
             if (dressMap.containsValue(me.getValue()));
                 System.out.println(me.getKey() + " " + me.getValue());
-
+            Assert.assertTrue(dressMap.equals(menuMap));
         }
             return false;
         }
