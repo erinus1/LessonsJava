@@ -75,18 +75,15 @@ public class DressPage extends BasePage {
 
     public boolean checkEquals() {
         for (Map.Entry<String, Integer> me : menuMap.entrySet()) {
-            if (dressMap.containsKey(me.getKey()))
-                System.out.println("-> " + me.getKey());
-        }
-        for (Map.Entry<String, Integer> me1 : dressMap.entrySet()) {
-            if (menuMap.containsKey(me1.getValue()))
-                System.out.println(">>-> " + me1.getValue());
+            if (dressMap.containsKey(me.getKey()));
+            if (dressMap.containsValue(me.getValue()));
+                System.out.println(me.getKey() + " " + me.getValue());
 
         }
-        return false;
+            return false;
+        }
     }
 
-}
 
 
 
