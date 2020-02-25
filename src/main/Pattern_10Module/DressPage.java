@@ -1,20 +1,11 @@
 package main.Pattern_10Module;
 
-import com.sun.source.tree.AssertTree;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.Map;
 import java.util.*;
-
-import static java.util.Map.Entry.comparingByKey;
-import static java.util.Map.Entry.comparingByValue;
-import static java.util.stream.Collectors.toMap;
-
 
 public class DressPage extends BasePage {
     WebDriver driver;
@@ -33,20 +24,17 @@ public class DressPage extends BasePage {
     @FindBys(@FindBy(xpath = "//*[@class='color_pick'][contains(@href, 'color-')]"))
     private List<WebElement> dressOfColors;
 
-    HashMap<String, Integer> menuMap = new HashMap<>();
-    HashMap<String, Integer> dressMap = new HashMap<>();
 
     public String openUrl(String url) {
         driver.get(String.valueOf(url));
         dressButton.click();
         setWait();
         String dressURL = driver.getCurrentUrl();
-        Assert.assertTrue(dressURL.contains("id_category=8&controller=category"));
-        return url;
+        return dressURL;
     }
 
-    public HashMap<String, Integer> getExpectedColors(HashMap <String, Integer> expMap) {
-        setWait();
+    public HashMap<String, Integer> getExpectedColors() {
+        HashMap<String, Integer> expectedColors = new HashMap<>();
         //remove () from collection
         for (WebElement panel : listOfColors) {
             String colors = panel.getText();
@@ -54,40 +42,30 @@ public class DressPage extends BasePage {
             String color = colorAndCount[0].trim().toLowerCase();
             Integer count = Integer.parseInt(colorAndCount[1].trim().toLowerCase());
 
-            if (menuMap.containsKey(color)) {
-                menuMap.put(color, menuMap.get(color) + count);
+            if (expectedColors.containsKey(color)) {
+                expectedColors.put(color, expectedColors.get(color) + count);
             } else {
-                menuMap.put(color, count);
+                expectedColors.put(color, count);
             }
         }
-        return expMap;
+        return expectedColors;
     }
 
-        public HashMap<String, Integer> getPageColors(HashMap <String, Integer> actMap) {
+    public HashMap<String, Integer> getPageColors() {
+        HashMap<String, Integer> actualColors = new HashMap<>();
         //split href color to list
         for (WebElement itemsDress : dressOfColors) {
             String urlCol = itemsDress.getAttribute("href");
             String hrefRes = urlCol.substring(urlCol.lastIndexOf("-") + 1);
-            if (dressMap.containsKey(hrefRes)) {
-                dressMap.put(hrefRes, dressMap.get(hrefRes) + 1);
+            if (actualColors.containsKey(hrefRes)) {
+                actualColors.put(hrefRes, actualColors.get(hrefRes) + 1);
             } else {
-                dressMap.put(hrefRes, 1);
+                actualColors.put(hrefRes, 1);
             }
         }
-        return actMap;
+        return actualColors;
     }
-
-    public boolean checkEquals() {
-        for (Map.Entry<String, Integer> me : menuMap.entrySet()) {
-            if (dressMap.containsKey(me.getKey()));
-            if (dressMap.containsValue(me.getValue()));
-                System.out.println(me.getKey() + " " + me.getValue());
-            Assert.assertTrue(dressMap.equals(menuMap));
-        }
-            return false;
-        }
-    }
-
+}
 
 
 
