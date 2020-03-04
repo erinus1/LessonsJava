@@ -19,11 +19,10 @@ public class DressPage extends BasePage {
     private WebElement dressButton;
 
     @FindBys(@FindBy(xpath = "//*[@id=\"ul_layered_id_attribute_group_3\"]/*[@class='nomargin hiddable col-lg-6']"))
-    private List<WebElement> listOfColors;
+    private List<CatalogPage> listOfColors;
 
     @FindBys(@FindBy(xpath = "//*[@class='color_pick'][contains(@href, 'color-')]"))
     private List<WebElement> dressOfColors;
-
 
     public String openUrl(String url) {
         driver.get(String.valueOf(url));
@@ -31,24 +30,6 @@ public class DressPage extends BasePage {
         setWait();
         String dressURL = driver.getCurrentUrl();
         return dressURL;
-    }
-
-    public HashMap<String, Integer> getExpectedColors() {
-        HashMap<String, Integer> expectedColors = new HashMap<>();
-        //remove () from collection
-        for (WebElement panel : listOfColors) {
-            String colors = panel.getText();
-            String[] colorAndCount = colors.replaceAll("(\\w+\\s?)\\((\\s?\\d+\\s?)\\)", "$1-$2").trim().split("-");
-            String color = colorAndCount[0].trim().toLowerCase();
-            Integer count = Integer.parseInt(colorAndCount[1].trim().toLowerCase());
-
-            if (expectedColors.containsKey(color)) {
-                expectedColors.put(color, expectedColors.get(color) + count);
-            } else {
-                expectedColors.put(color, count);
-            }
-        }
-        return expectedColors;
     }
 
     public HashMap<String, Integer> getPageColors() {
