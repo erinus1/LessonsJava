@@ -1,5 +1,6 @@
 package main.Pattern_10Module;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,16 +10,15 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.HashMap;
 import java.util.List;
 
-public class CatalogPage extends BasePage{
+public class Catalog {
     WebDriver driver;
 
-    public CatalogPage(WebDriver driver) {
+    public Catalog(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver, this);
     }
 
-    @FindBys(@FindBy(xpath = "//*[@id=\"ul_layered_id_attribute_group_3\"]/*[@class='nomargin hiddable col-lg-6']"))
-    private List<WebElement> panelColors;
+    //@FindBys(@FindBy(xpath = ".//*[@class='color-option  ']"))
+    private List<WebElement> panelColors = driver.findElements(By.xpath(".//*[@class='color-option  ']"));
 
     public HashMap<String, Integer> getCatalogColors() {
         HashMap<String, Integer> expectedColors = new HashMap<>();

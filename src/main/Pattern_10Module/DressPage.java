@@ -18,8 +18,8 @@ public class DressPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/a")
     private WebElement dressButton;
 
-    @FindBys(@FindBy(xpath = "//*[@id=\"ul_layered_id_attribute_group_3\"]/*[@class='nomargin hiddable col-lg-6']"))
-    private List<CatalogPage> listOfColors;
+    @FindBy(xpath = "//*[@id='layered_block_left']")
+    public Catalog catalog = new Catalog(driver);
 
     @FindBys(@FindBy(xpath = "//*[@class='color_pick'][contains(@href, 'color-')]"))
     private List<WebElement> dressOfColors;
@@ -32,9 +32,12 @@ public class DressPage extends BasePage {
         return dressURL;
     }
 
+    public Catalog getCatalog(){
+        Catalog i = catalog;
+        return catalog;
+    }
     public HashMap<String, Integer> getPageColors() {
         HashMap<String, Integer> actualColors = new HashMap<>();
-        //split href color to list
         for (WebElement itemsDress : dressOfColors) {
             String urlCol = itemsDress.getAttribute("href");
             String hrefRes = urlCol.substring(urlCol.lastIndexOf("-") + 1);
