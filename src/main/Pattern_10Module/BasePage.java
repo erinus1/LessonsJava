@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -15,17 +17,21 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class BasePage {
-    public static WebDriver driver = driverInit();
 
-    public static  WebDriver driverInit() {
-        if(driver == null) {
+    protected WebDriver driver;
+
+    public BasePage(){
+        this.driver = new ChromeDriver();
+        PageFactory.initElements(driver, this);
+    }
+
+    public static WebDriver setDriver(WebDriver driver) {
+        if (driver == null) {
             String exePath = "src\\drivers\\chrome\\chromedriver.exe";
             System.setProperty("webdriver.chrome.driver", exePath);
-            return new ChromeDriver();
+            driver = new ChromeDriver();
         }
-        else {
-            return driver;
-        }
+        return driver;
     }
 
     @Before

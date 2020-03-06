@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Catalog {
+
     WebDriver driver;
 
     public Catalog(WebDriver driver) {
