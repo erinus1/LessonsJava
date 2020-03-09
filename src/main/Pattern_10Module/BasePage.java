@@ -1,11 +1,7 @@
 package main.Pattern_10Module;
 
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -17,31 +13,15 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class BasePage {
+    public WebDriver driver;
 
-    protected WebDriver driver;
-
-    public BasePage(){
-        this.driver = new ChromeDriver();
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public static WebDriver setDriver(WebDriver driver) {
-        if (driver == null) {
-            String exePath = "src\\drivers\\chrome\\chromedriver.exe";
-            System.setProperty("webdriver.chrome.driver", exePath);
-            driver = new ChromeDriver();
-        }
-        return driver;
-    }
-
-    @Before
-    public void setWait(){
-        driver.manage().window().maximize();
+    public void setWait() {
+        if (driver == null) { return; }
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    @After
-    public void close() {
-        driver.quit();
     }
 }
