@@ -1,6 +1,6 @@
 package Module_12WebServices.Models;
 
-public class Config {
+public class EndPoints {
 
     public static final String URL = "https://petstore.swagger.io/v2";
     public static final String pet_OrderId = "/store/order/{orderId}"; //get+delete
