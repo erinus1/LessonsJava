@@ -12,13 +12,24 @@ public class Order {
     private int petId;
     private int quantity;
     private String shipData;
-    private Status status;
+    private STATUS status;
     private boolean complete;
 
-    public enum Status {
-        placed,
-        approved,
-        delivered
+    public static enum STATUS {
+        PLACED("placed"),
+        APPROVED("approved"),
+        DELIVERED("delivered");
+
+        private String status;
+
+        STATUS(final String status) {
+            this.status = status;
+        }
+
+        @Override
+        public String toString() {
+            return status;
+        }
     }
 
     public Order(int id) {
@@ -26,7 +37,7 @@ public class Order {
         petId = id;
         quantity = 1;
         shipData = "2020-03-18T17:21:13.045Z";
-        status = Status.placed;
+        status = STATUS.PLACED;
         complete = true;
     }
 
@@ -37,7 +48,7 @@ public class Order {
                 "  \"petId\": " + petId + ",\n" +
                 "  \"quantity\": " + quantity + ",\n" +
                 "  \"shipDate\": \"" + shipData + "\",\n" +
-                "  \"status\": \"" + status + "\",\n" +
+                "  \"status\": \"" + status.toString() + "\",\n" +
                 "  \"complete\": " + complete + "\n" +
                 "}";
     }
