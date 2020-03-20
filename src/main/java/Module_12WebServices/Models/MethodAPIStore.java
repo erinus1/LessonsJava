@@ -32,7 +32,6 @@ public class MethodAPIStore {
         return  given()
                 .spec(createBaseSpec())
                 .accept(ContentType.JSON)
-                .queryParam("status", status)
                 .when()
                 .get(EndPoints.pet_Status)
                 .then()
@@ -45,7 +44,7 @@ public class MethodAPIStore {
                 .spec(createBaseSpec())
                 .pathParam("orderId", id)
                 .when()
-                .get(EndPoints.pet_OrderId)
+                .delete(EndPoints.pet_OrderId)
                 .then()
                 .extract()
                 .response();
