@@ -1,4 +1,4 @@
-package Module_12WebServices.Models;
+package Module_12WebServices.Models.EndPoints;
 
 public class EndPoints {
 

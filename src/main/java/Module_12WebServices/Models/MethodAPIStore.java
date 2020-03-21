@@ -1,5 +1,6 @@
 package Module_12WebServices.Models;
 
+import Module_12WebServices.Models.EndPoints.EndPoints;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -28,7 +29,7 @@ public class MethodAPIStore {
                 .response();
     }
 
-    public Response petStatus(String status){
+    public Response petStatus(){
         return  given()
                 .spec(createBaseSpec())
                 .accept(ContentType.JSON)
